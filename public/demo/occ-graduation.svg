@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Graduation (placeholder)">
+<rect width="200" height="200" fill="#dde8dc"/>
+<g transform="translate(0 0)"><path d="M100 60l60 24-60 24-60-24z" fill="#2e5a3e"/><path d="M66 94v26c0 10 68 10 68 0V94" fill="none" stroke="#2e5a3e" stroke-width="7"/></g>
+<text x="190" y="190" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#2e5a3e" opacity=".75">demo placeholder</text>
+</svg>

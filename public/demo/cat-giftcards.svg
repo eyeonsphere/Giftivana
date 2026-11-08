@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Gift cards (placeholder)">
+<rect width="200" height="200" fill="#dde8dc"/>
+<g transform="translate(0 0)"><rect x="40" y="62" width="120" height="76" rx="12" fill="#2e5a3e"/><rect x="40" y="80" width="120" height="14" fill="#1e2420" opacity=".25"/><rect x="54" y="108" width="52" height="8" rx="4" fill="#fff" opacity=".7"/></g>
+<text x="190" y="190" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#2e5a3e" opacity=".75">demo placeholder</text>
+</svg>

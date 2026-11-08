@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Olive tree (placeholder)">
+<rect width="200" height="200" fill="#dde8dc"/>
+<g transform="translate(0 0)"><rect x="86" y="124" width="28" height="30" rx="4" fill="#2e5a3e"/><path d="M100 36 60 112h80z" fill="#2e5a3e" opacity=".75"/><path d="M100 60 72 112h56z" fill="#2e5a3e"/></g>
+<text x="190" y="190" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#2e5a3e" opacity=".75">demo placeholder</text>
+</svg>

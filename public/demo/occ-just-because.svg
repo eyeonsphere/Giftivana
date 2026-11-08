@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Just because (placeholder)">
+<rect width="200" height="200" fill="#ead9b4"/>
+<g transform="translate(0 0)"><rect x="56" y="86" width="88" height="66" rx="10" fill="#8a6410"/><rect x="94" y="86" width="12" height="66" fill="#fff" opacity=".5"/><rect x="56" y="112" width="88" height="12" fill="#fff" opacity=".5"/><path d="M100 86c-16-28-40-20-28-4s28 4 28 4zm0 0c16-28 40-20 28-4s-28 4-28 4z" fill="#8a6410"/></g>
+<text x="190" y="190" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#8a6410" opacity=".75">demo placeholder</text>
+</svg>

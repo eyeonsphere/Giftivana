@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Gift baskets (placeholder)">
+<rect width="200" height="200" fill="#ead9b4"/>
+<g transform="translate(0 0)"><path d="M48 92h104l-10 56H58z" fill="#8a6410"/><path d="M66 92c0-26 14-40 34-40s34 14 34 40" fill="none" stroke="#8a6410" stroke-width="7"/><g fill="#8a6410" opacity=".6"><circle cx="80" cy="84" r="9"/><circle cx="104" cy="78" r="9"/><circle cx="126" cy="86" r="9"/></g></g>
+<text x="190" y="190" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#8a6410" opacity=".75">demo placeholder</text>
+</svg>

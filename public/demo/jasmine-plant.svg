@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Jasmine plant (placeholder)">
+<rect width="200" height="200" fill="#dde8dc"/>
+<g transform="translate(0 0)"><rect x="72" y="120" width="56" height="36" rx="6" fill="#2e5a3e"/><g fill="none" stroke="#2e5a3e" stroke-width="7" stroke-linecap="round"><path d="M100 120V70"/><path d="M100 96c-18 0-30-10-34-26 18 0 30 10 34 26z" fill="#2e5a3e" opacity=".7"/><path d="M100 84c18 0 30-10 34-26-18 0-30 10-34 26z" fill="#2e5a3e" opacity=".7"/></g></g>
+<text x="190" y="190" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#2e5a3e" opacity=".75">demo placeholder</text>
+</svg>

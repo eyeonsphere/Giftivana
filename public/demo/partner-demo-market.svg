@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Demo Market (placeholder)">
+<rect width="200" height="200" fill="#dde8dc"/>
+<g transform="translate(0 0)"><rect x="48" y="86" width="104" height="62" rx="6" fill="#2e5a3e"/><path d="M44 86l10-30h92l10 30z" fill="#2e5a3e" opacity=".7"/><rect x="88" y="110" width="24" height="38" rx="3" fill="#fff" opacity=".6"/></g>
+<text x="190" y="190" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#2e5a3e" opacity=".75">demo placeholder</text>
+</svg>

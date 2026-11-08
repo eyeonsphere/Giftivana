@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Peony bouquet (placeholder)">
+<rect width="200" height="200" fill="#f8e2d3"/>
+<g transform="translate(0 0)"><circle cx="100" cy="92" r="16" fill="#b9663f"/><g fill="none" stroke="#b9663f" stroke-width="7" stroke-linecap="round"><path d="M100 112v48"/><path d="M100 140c-14 0-22-8-28-18"/><path d="M100 150c14 0 22-8 28-18"/></g><g fill="#b9663f" opacity=".55"><circle cx="78" cy="78" r="12"/><circle cx="122" cy="78" r="12"/><circle cx="78" cy="106" r="12"/><circle cx="122" cy="106" r="12"/></g></g>
+<text x="190" y="190" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#b9663f" opacity=".75">demo placeholder</text>
+</svg>
