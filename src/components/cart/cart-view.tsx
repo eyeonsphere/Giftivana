@@ -103,10 +103,9 @@ export function CartView({ currencies, cities }: { currencies: [string, Currency
             <dt>{t("cart.deliveryTbd")}</dt>
           </div>
         </dl>
-        <Button className="mt-5 w-full" size="lg" disabled title={t("cart.checkoutSoon")}>
+        <ButtonLink href="/checkout" className="mt-5 w-full" size="lg">
           {t("cart.checkout")}
-        </Button>
-        <p className="mt-2 text-center text-xs text-ink-muted">{t("cart.checkoutSoon")}</p>
+        </ButtonLink>
       </aside>
     </div>
   );
