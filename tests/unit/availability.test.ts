@@ -59,17 +59,30 @@ describe("destination-based catalog (demo data)", () => {
   });
 });
 
-describe("Syrian demo cities", () => {
-  it("lists six Syrian cities and keeps Baghdad", async () => {
+describe("demo cities", () => {
+  it("lists the Syrian and Iraqi demo cities in order", async () => {
     const { getCities } = await import("@/lib/catalog/queries");
     const sy = await getCities("SY");
     expect(sy.map((c) => c.name)).toEqual(["Damascus", "Aleppo", "Homs", "Hama", "Latakia", "Tartus"]);
-    expect((await getCities("IQ")).map((c) => c.slug)).toEqual(["baghdad"]);
+    expect((await getCities("IQ")).map((c) => c.name)).toEqual([
+      "Baghdad",
+      "Mosul",
+      "Basra",
+      "Kirkuk",
+      "Najaf",
+      "Karbala",
+      "Sulaymaniyah",
+      "Nasiriyah",
+      "Amarah",
+    ]);
   });
 
   it("makes Damascus physical gifts available in other Syrian cities, but not gift cards", async () => {
     const aleppo = await listProducts({ type: "physical", cityId: "city_aleppo" });
     expect(aleppo.some((p) => p.slug === "soft-peony-bouquet")).toBe(true);
     expect(await listProducts({ type: "gift_card", cityId: "city_aleppo" })).toHaveLength(0);
+    const basra = await listProducts({ type: "physical", cityId: "city_basra" });
+    expect(basra.some((p) => p.slug === "sunflower-bunch")).toBe(true);
+    expect(await listProducts({ type: "gift_card", cityId: "city_basra" })).toHaveLength(0);
   });
 });

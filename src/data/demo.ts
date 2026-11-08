@@ -53,6 +53,14 @@ export const cities: City[] = [
   { id: "city_latakia", countryCode: "SY", name: "Latakia", slug: "latakia", timezone: "Asia/Damascus", isActive: true, sortOrder: 5 },
   { id: "city_tartus", countryCode: "SY", name: "Tartus", slug: "tartus", timezone: "Asia/Damascus", isActive: true, sortOrder: 6 },
   { id: "city_baghdad", countryCode: "IQ", name: "Baghdad", slug: "baghdad", timezone: "Asia/Baghdad", isActive: true, sortOrder: 1 },
+  { id: "city_mosul", countryCode: "IQ", name: "Mosul", slug: "mosul", timezone: "Asia/Baghdad", isActive: true, sortOrder: 2 },
+  { id: "city_basra", countryCode: "IQ", name: "Basra", slug: "basra", timezone: "Asia/Baghdad", isActive: true, sortOrder: 3 },
+  { id: "city_kirkuk", countryCode: "IQ", name: "Kirkuk", slug: "kirkuk", timezone: "Asia/Baghdad", isActive: true, sortOrder: 4 },
+  { id: "city_najaf", countryCode: "IQ", name: "Najaf", slug: "najaf", timezone: "Asia/Baghdad", isActive: true, sortOrder: 5 },
+  { id: "city_karbala", countryCode: "IQ", name: "Karbala", slug: "karbala", timezone: "Asia/Baghdad", isActive: true, sortOrder: 6 },
+  { id: "city_sulaymaniyah", countryCode: "IQ", name: "Sulaymaniyah", slug: "sulaymaniyah", timezone: "Asia/Baghdad", isActive: true, sortOrder: 7 },
+  { id: "city_nasiriyah", countryCode: "IQ", name: "Nasiriyah", slug: "nasiriyah", timezone: "Asia/Baghdad", isActive: true, sortOrder: 8 },
+  { id: "city_amarah", countryCode: "IQ", name: "Amarah", slug: "amarah", timezone: "Asia/Baghdad", isActive: true, sortOrder: 9 },
 ];
 
 export const deliverySettings: DeliverySettings[] = cities.map((c) => ({
@@ -600,16 +608,18 @@ export const productVariants: ProductVariant[] = seeds.flatMap(({ product, varia
   })),
 );
 
-const syrianCityIds = cities.filter((c) => c.countryCode === "SY").map((c) => c.id);
+const hubs: Record<string, string> = { SY: "city_damascus", IQ: "city_baghdad" };
+const cityIdsByCountry = (code: string) => cities.filter((c) => c.countryCode === code).map((c) => c.id);
 
 export const productAvailability: ProductAvailability[] = seeds.flatMap(({ product, cities: cs }) =>
   cs.flatMap((c) => {
     const base: ProductAvailability = { productId: product.id, cityId: c.cityId, isAvailable: true, leadTimeDays: c.leadTimeDays };
-    // Demo rule: a physical gift deliverable in Damascus is also deliverable in the other Syrian demo cities,
-    // one day slower. Gift cards stay limited to the cities their partner actually lists.
-    if (product.productType !== "gift_card" && c.cityId === "city_damascus") {
-      const others = syrianCityIds
-        .filter((id) => id !== "city_damascus")
+    // Demo rule: a physical gift deliverable in a country's hub city (Damascus, Baghdad) is also deliverable
+    // in that country's other demo cities, one day slower. Gift cards stay limited to the cities their partner lists.
+    const country = Object.keys(hubs).find((k) => hubs[k] === c.cityId);
+    if (product.productType !== "gift_card" && country) {
+      const others = cityIdsByCountry(country)
+        .filter((id) => id !== c.cityId)
         .map<ProductAvailability>((id) => ({ productId: product.id, cityId: id, isAvailable: true, leadTimeDays: (c.leadTimeDays ?? 2) + 1 }));
       return [base, ...others];
     }
