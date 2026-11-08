@@ -1,0 +1,55 @@
+/*
+  Evernear design tokens.
+  Raw values live on :root; Tailwind's @theme (in globals.css) maps them to utilities.
+  Keep hex values here only — components reference semantic tokens, never raw colors.
+*/
+:root {
+  /* Surfaces */
+  --ev-ivory: #faf6ef;
+  --ev-ivory-deep: #f1ebdf;
+  --ev-paper: #fffdf9;
+
+  /* Primary: deep green */
+  --ev-green-900: #17301f;
+  --ev-green-800: #1f3d2b;
+  --ev-green-700: #2e5a3e;
+  --ev-green-500: #4e7d5c;
+  --ev-green-200: #c9dbc9;
+  --ev-green-100: #dde8dc;
+  --ev-green-050: #eef3ec;
+
+  /* Warm accents */
+  --ev-peach-300: #f3cdb6;
+  --ev-peach-200: #f8e2d3;
+  --ev-peach-100: #fbeee5;
+  --ev-gold-600: #b8923f;
+  --ev-gold-200: #ead9b4;
+
+  /* Ink */
+  --ev-ink: #1e2420;
+  --ev-ink-soft: #3f4a43;
+  --ev-ink-muted: #6b756e;
+  --ev-line: #e6ded0;
+  --ev-line-strong: #cfc4b2;
+
+  /* Feedback */
+  --ev-danger: #a23b2f;
+  --ev-danger-bg: #fbe9e5;
+  --ev-warn: #8a6410;
+  --ev-warn-bg: #fdf3d8;
+  --ev-ok: #2e5a3e;
+  --ev-ok-bg: #e4efe4;
+
+  /* Shape */
+  --ev-radius-card: 20px;
+  --ev-radius-control: 10px;
+  --ev-radius-pill: 999px;
+
+  /* Elevation — one soft, tinted shadow; not grey */
+  --ev-shadow-card: 0 1px 2px rgba(31, 61, 43, 0.06), 0 8px 24px -12px rgba(31, 61, 43, 0.18);
+  --ev-shadow-lift: 0 2px 4px rgba(31, 61, 43, 0.08), 0 18px 40px -16px rgba(31, 61, 43, 0.28);
+
+  /* Type */
+  --ev-font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --ev-font-sans: "Figtree Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+}

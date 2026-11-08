@@ -1,26 +1,196 @@
 @import "tailwindcss";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/figtree";
+@import "../styles/tokens.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* Map Evernear tokens to Tailwind utilities (bg-ivory, text-ink, font-display, rounded-card …) */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ivory: var(--ev-ivory);
+  --color-ivory-deep: var(--ev-ivory-deep);
+  --color-paper: var(--ev-paper);
+
+  --color-green-900: var(--ev-green-900);
+  --color-green-800: var(--ev-green-800);
+  --color-green-700: var(--ev-green-700);
+  --color-green-500: var(--ev-green-500);
+  --color-green-200: var(--ev-green-200);
+  --color-green-100: var(--ev-green-100);
+  --color-green-050: var(--ev-green-050);
+
+  --color-peach-300: var(--ev-peach-300);
+  --color-peach-200: var(--ev-peach-200);
+  --color-peach-100: var(--ev-peach-100);
+  --color-gold-600: var(--ev-gold-600);
+  --color-gold-200: var(--ev-gold-200);
+
+  --color-ink: var(--ev-ink);
+  --color-ink-soft: var(--ev-ink-soft);
+  --color-ink-muted: var(--ev-ink-muted);
+  --color-line: var(--ev-line);
+  --color-line-strong: var(--ev-line-strong);
+
+  --color-danger: var(--ev-danger);
+  --color-danger-bg: var(--ev-danger-bg);
+  --color-warn: var(--ev-warn);
+  --color-warn-bg: var(--ev-warn-bg);
+  --color-ok: var(--ev-ok);
+  --color-ok-bg: var(--ev-ok-bg);
+
+  --radius-card: var(--ev-radius-card);
+  --radius-control: var(--ev-radius-control);
+  --radius-pill: var(--ev-radius-pill);
+
+  --shadow-card: var(--ev-shadow-card);
+  --shadow-lift: var(--ev-shadow-lift);
+
+  --font-display: var(--ev-font-display);
+  --font-sans: var(--ev-font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    background: var(--ev-ivory);
+    color: var(--ev-ink);
+    font-family: var(--ev-font-sans);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.55;
+  }
+
+  /* Type scale: 1.2 minor third on mobile, 1.25 on desktop via clamp */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--ev-font-display);
+    font-variation-settings:
+      "opsz" 144,
+      "SOFT" 60,
+      "WONK" 0;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+  h1 {
+    font-size: clamp(2.25rem, 1.5rem + 3.2vw, 3.75rem);
+  }
+  h2 {
+    font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
+  }
+  h3 {
+    font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  }
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible, consistent focus for keyboard users */
+  :focus-visible {
+    outline: 3px solid var(--ev-gold-600);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--ev-peach-200);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .ev-container {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .ev-container {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .ev-container {
+      padding-inline: 2rem;
+    }
+  }
+
+  .ev-prose {
+    max-width: 68ch;
+  }
+  .ev-prose h2 {
+    margin-block: 2.5rem 0.75rem;
+  }
+  .ev-prose h3 {
+    margin-block: 1.75rem 0.5rem;
+  }
+  .ev-prose p,
+  .ev-prose ul,
+  .ev-prose ol {
+    margin-block: 0.75rem;
+    color: var(--ev-ink-soft);
+  }
+  .ev-prose ul {
+    list-style: disc;
+    padding-inline-start: 1.25rem;
+  }
+  .ev-prose ol {
+    list-style: decimal;
+    padding-inline-start: 1.25rem;
+  }
+  .ev-prose a {
+    color: var(--ev-green-700);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* The gift tag: the one memorable shape on the site */
+  .ev-tag {
+    position: relative;
+    background: var(--ev-paper);
+    border: 1px solid var(--ev-line);
+    border-radius: var(--ev-radius-card);
+    box-shadow: var(--ev-shadow-lift);
+    clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%);
+  }
+  .ev-tag::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    inset-inline-end: 12px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--ev-ivory);
+    box-shadow: inset 0 0 0 2px var(--ev-line-strong);
+  }
+
+  .ev-rise {
+    animation: ev-rise 640ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  @keyframes ev-rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }

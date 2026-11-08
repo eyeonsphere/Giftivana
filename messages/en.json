@@ -1,0 +1,184 @@
+{
+  "brand": {
+    "name": "Evernear",
+    "tagline": "Distance doesn't have to feel so far."
+  },
+  "nav": {
+    "gifts": "Gifts",
+    "giftCards": "Gift cards",
+    "occasions": "Occasions",
+    "delivery": "Delivery",
+    "cart": "Cart",
+    "account": "Account",
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "demo": {
+    "banner": "Demo environment: products, partners and payments shown here are placeholders. No real orders are fulfilled.",
+    "productBadge": "Demo product",
+    "partnerBadge": "Demo partner",
+    "destinationNote": "Demo destinations only. Confirmed delivery coverage will be listed here once local partners are in place."
+  },
+  "destination": {
+    "label": "Where is your gift going?",
+    "country": "Country",
+    "city": "City",
+    "choose": "Choose a city",
+    "set": "Show gifts for this city",
+    "change": "Change",
+    "current": "Sending to",
+    "none": "Choose a destination",
+    "orderingFrom": "Ordering from"
+  },
+  "home": {
+    "heroTitle": "Send something that says you're still close.",
+    "heroBody": "Evernear helps you send flowers, cakes, chocolates, plants and store gift cards to the people you love in Syria and Iraq — with a message in your own words.",
+    "heroCta": "Browse gifts",
+    "heroSecondary": "See how it works",
+    "categoriesTitle": "Shop by category",
+    "featuredTitle": "Thoughtful picks",
+    "featuredAll": "See all gifts",
+    "giftCardsTitle": "Let them choose, from a store they already know",
+    "giftCardsBody": "Store gift cards are bought here and redeemed locally. Face value is shown in the store's currency; you pay in yours.",
+    "giftCardsCta": "Browse gift cards",
+    "howTitle": "How it works",
+    "howSteps": [
+      {
+        "title": "Choose a destination",
+        "body": "Pick the country and city. You'll only see gifts that can actually be delivered there."
+      },
+      {
+        "title": "Pick a gift and write your message",
+        "body": "Flowers, cake, a plant, or a store gift card. Add a note in your own words."
+      },
+      {
+        "title": "Tell us who it's for and when",
+        "body": "Recipient's name, phone and address, and the delivery date you'd like."
+      },
+      {
+        "title": "We take it from there",
+        "body": "You'll get an order reference and updates as the gift moves toward its recipient."
+      }
+    ],
+    "occasionsTitle": "For the moments you'd rather not miss"
+  },
+  "catalog": {
+    "title": "Gifts",
+    "subtitle": "Everything here can be delivered to the city you've chosen.",
+    "search": "Search gifts",
+    "searchPlaceholder": "Search by name",
+    "category": "Category",
+    "occasion": "Occasion",
+    "price": "Price",
+    "anyCategory": "All categories",
+    "anyOccasion": "Any occasion",
+    "anyPrice": "Any price",
+    "sort": "Sort by",
+    "sortFeatured": "Featured",
+    "sortPriceAsc": "Price: low to high",
+    "sortPriceDesc": "Price: high to low",
+    "sortName": "Name",
+    "apply": "Apply filters",
+    "clear": "Clear filters",
+    "results": "{count} gifts",
+    "resultsOne": "1 gift",
+    "emptyTitle": "No gifts match these filters",
+    "emptyBody": "Try clearing a filter, or choose a different destination.",
+    "noDestinationTitle": "Choose a destination to see what's available",
+    "noDestinationBody": "Gifts and gift cards differ by city. Pick where you're sending to and we'll show what can be delivered there.",
+    "from": "From"
+  },
+  "product": {
+    "quantity": "Quantity",
+    "option": "Option",
+    "giftMessage": "Gift message",
+    "giftMessageHint": "Optional. Written on a card and included with the gift.",
+    "addToCart": "Add to cart",
+    "added": "Added to cart",
+    "availableIn": "Can be delivered to",
+    "notAvailableHere": "Not available in your selected city",
+    "deliveryInfo": "Delivery",
+    "leadTime": "Order at least {days} days ahead",
+    "leadTimeOne": "Order at least 1 day ahead",
+    "sameDay": "Next-day delivery may be available",
+    "deliveryCopy": "Delivery dates are chosen at checkout and follow the local calendar of the destination city.",
+    "backToGifts": "All gifts",
+    "demoImage": "Illustration placeholder — real product photography is added through the admin dashboard."
+  },
+  "giftCards": {
+    "title": "Store gift cards",
+    "subtitle": "Bought here, redeemed locally. The recipient shops at a store they already know.",
+    "difference": "Gift cards are not shipped like a bouquet. Depending on the store, the recipient receives a code, a physical card, or a hand-delivered voucher arranged by our team.",
+    "storeType": "Store type",
+    "anyStoreType": "All store types",
+    "faceValue": "Face value",
+    "youPay": "You pay",
+    "denominations": "Choose an amount",
+    "fulfillment": "How it's delivered",
+    "fulfillmentDigital": "Digital code sent to the recipient",
+    "fulfillmentPhysical": "Physical card delivered to the recipient",
+    "fulfillmentManual": "Arranged by the Evernear team",
+    "fulfillmentManualHint": "A team member confirms the card with the store and delivers it to the recipient. You'll see progress in order tracking.",
+    "timing": "Timing",
+    "redemption": "How to redeem",
+    "expiry": "Expiry",
+    "noExpiry": "This card does not expire",
+    "expiresAfter": "Expires {months} months after issue",
+    "restrictions": "Good to know",
+    "acceptedAt": "Accepted at",
+    "terms": "Gift-card terms",
+    "recipientNote": "You'll add the recipient's details and your personal message at checkout.",
+    "emptyTitle": "No gift cards for this destination yet",
+    "emptyBody": "Partner stores are added city by city. Try another city or browse physical gifts.",
+    "backToCards": "All gift cards",
+    "facePriceNote": "Face value is what the card is worth at the store. The price you pay is shown in your currency and includes Evernear's service. No exchange rate is applied or implied."
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty",
+    "emptyBody": "Add a gift or a gift card and it will show up here.",
+    "browse": "Browse gifts",
+    "subtotal": "Subtotal",
+    "deliveryTbd": "Delivery fee is calculated at checkout",
+    "checkout": "Continue to checkout",
+    "checkoutSoon": "Checkout is part of the next build stage.",
+    "remove": "Remove",
+    "physical": "Physical gift",
+    "digital": "Gift card",
+    "forCity": "For delivery to {city}",
+    "conflictTitle": "Your cart is for a different city",
+    "conflictBody": "An order can only go to one city. Start a new cart for {city}, or keep the one you have.",
+    "startNew": "Start new cart",
+    "viewCurrent": "View current cart",
+    "mixedNote": "This cart has both a physical gift and a gift card. They'll be delivered separately but belong to one order."
+  },
+  "occasions": {
+    "title": "Occasions",
+    "all": "All occasions"
+  },
+  "footer": {
+    "about": "About Evernear",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "delivery": "Delivery information",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "giftCardTerms": "Gift-card terms",
+    "legalNote": "Legal pages are drafts awaiting professional review.",
+    "shop": "Shop",
+    "help": "Help",
+    "legal": "Legal"
+  },
+  "common": {
+    "loading": "Loading…",
+    "errorTitle": "Something went wrong",
+    "errorBody": "Please try again. If it keeps happening, contact us.",
+    "tryAgain": "Try again",
+    "notFoundTitle": "We couldn't find that page",
+    "notFoundBody": "It may have moved, or the link may be incomplete.",
+    "goHome": "Go to the homepage",
+    "learnMore": "Learn more",
+    "draft": "Draft — requires professional review before publication."
+  }
+}
