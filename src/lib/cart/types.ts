@@ -29,6 +29,6 @@ export interface CartState {
   cityId: string | null; // one destination per cart (MVP rule)
 }
 
-export const CART_STORAGE_KEY = "evernear.cart.v1";
+export const CART_STORAGE_KEY = "giftivana.cart.v1";
 export const MAX_QUANTITY = 10;
 export const MAX_GIFT_MESSAGE = 300;

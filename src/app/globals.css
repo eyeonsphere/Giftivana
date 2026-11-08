@@ -3,7 +3,7 @@
 @import "@fontsource-variable/figtree";
 @import "../styles/tokens.css";
 
-/* Map Evernear tokens to Tailwind utilities (bg-ivory, text-ink, font-display, rounded-card …) */
+/* Map Giftivana tokens to Tailwind utilities (bg-ivory, text-ink, font-display, rounded-card …) */
 @theme inline {
   --color-ivory: var(--ev-ivory);
   --color-ivory-deep: var(--ev-ivory-deep);

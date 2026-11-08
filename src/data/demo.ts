@@ -630,7 +630,7 @@ export const productAvailability: ProductAvailability[] = seeds.flatMap(({ produ
 /* ---------- Gift-card details ---------- */
 
 const defaultTerms =
-  "DRAFT — placeholder terms for demonstration. Gift cards are issued by the partner store and subject to the store's own terms. Evernear arranges purchase and delivery only. Cards are not redeemable for cash and cannot be reloaded. These terms require legal review before launch.";
+  "DRAFT — placeholder terms for demonstration. Gift cards are issued by the partner store and subject to the store's own terms. Giftivana arranges purchase and delivery only. Cards are not redeemable for cash and cannot be reloaded. These terms require legal review before launch.";
 
 export const giftCardDetails: GiftCardDetails[] = [
   {
@@ -644,7 +644,7 @@ export const giftCardDetails: GiftCardDetails[] = [
     termsVersion: 1,
     expiryMonths: 12,
     restrictions: "Cannot be used for tobacco, phone credit, or to buy other gift cards. Balance cannot be withdrawn as cash.",
-    deliveryTimingNote: "Arranged by the Evernear team within 2–3 working days of payment confirmation, or on your chosen delivery date if later.",
+    deliveryTimingNote: "Arranged by the Giftivana team within 2–3 working days of payment confirmation, or on your chosen delivery date if later.",
     acceptedLocationIds: ["loc_dm_1", "loc_dm_2"],
   },
   {
@@ -658,7 +658,7 @@ export const giftCardDetails: GiftCardDetails[] = [
     termsVersion: 1,
     expiryMonths: null,
     restrictions: "In-store only. Not valid for online purchases or on items already discounted more than 50%.",
-    deliveryTimingNote: "Arranged by the Evernear team within 3 working days of payment confirmation, or on your chosen delivery date if later.",
+    deliveryTimingNote: "Arranged by the Giftivana team within 3 working days of payment confirmation, or on your chosen delivery date if later.",
     acceptedLocationIds: ["loc_dd_1"],
   },
   {
@@ -673,7 +673,7 @@ export const giftCardDetails: GiftCardDetails[] = [
     expiryMonths: 6,
     restrictions: "Not valid for phone top-ups or utility payments made in store.",
     deliveryTimingNote:
-      "Arranged by the Evernear team within 2 working days of payment confirmation. Digital codes, where offered, are sent only after the partner issues them.",
+      "Arranged by the Giftivana team within 2 working days of payment confirmation. Digital codes, where offered, are sent only after the partner issues them.",
     acceptedLocationIds: ["loc_dg_1"],
   },
 ];

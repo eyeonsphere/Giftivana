@@ -1,5 +1,5 @@
 /*
-  Evernear design tokens.
+  Giftivana design tokens.
   Raw values live on :root; Tailwind's @theme (in globals.css) maps them to utilities.
   Keep hex values here only — components reference semantic tokens, never raw colors.
 */

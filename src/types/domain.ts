@@ -1,5 +1,5 @@
 /**
- * Domain types for Evernear.
+ * Domain types for Giftivana.
  *
  * These mirror the database schema from docs/STAGE-1-PLAN.md (§5) so that
  * Stage 3 can replace the demo data source with Supabase queries without

@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "Evernear",
+    "name": "Giftivana",
     "tagline": "Distance doesn't have to feel so far."
   },
   "nav": {
@@ -33,7 +33,7 @@
   },
   "home": {
     "heroTitle": "Send something that says you're still close.",
-    "heroBody": "Evernear helps you send flowers, cakes, chocolates, plants and store gift cards to the people you love in Syria and Iraq — with a message in your own words.",
+    "heroBody": "Giftivana helps you send flowers, cakes, chocolates, plants and store gift cards to the people you love in Syria and Iraq — with a message in your own words.",
     "heroCta": "Browse gifts",
     "heroSecondary": "See how it works",
     "categoriesTitle": "Shop by category",
@@ -118,7 +118,7 @@
     "fulfillment": "How it's delivered",
     "fulfillmentDigital": "Digital code sent to the recipient",
     "fulfillmentPhysical": "Physical card delivered to the recipient",
-    "fulfillmentManual": "Arranged by the Evernear team",
+    "fulfillmentManual": "Arranged by the Giftivana team",
     "fulfillmentManualHint": "A team member confirms the card with the store and delivers it to the recipient. You'll see progress in order tracking.",
     "timing": "Timing",
     "redemption": "How to redeem",
@@ -132,7 +132,7 @@
     "emptyTitle": "No gift cards for this destination yet",
     "emptyBody": "Partner stores are added city by city. Try another city or browse physical gifts.",
     "backToCards": "All gift cards",
-    "facePriceNote": "Face value is what the card is worth at the store. The price you pay is shown in your currency and includes Evernear's service. No exchange rate is applied or implied."
+    "facePriceNote": "Face value is what the card is worth at the store. The price you pay is shown in your currency and includes Giftivana's service. No exchange rate is applied or implied."
   },
   "cart": {
     "title": "Your cart",
@@ -158,7 +158,7 @@
     "all": "All occasions"
   },
   "footer": {
-    "about": "About Evernear",
+    "about": "About Giftivana",
     "contact": "Contact",
     "faq": "FAQ",
     "delivery": "Delivery information",

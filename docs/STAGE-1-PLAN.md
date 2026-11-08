@@ -1,12 +1,12 @@
-# Evernear — Stage 1: Product Plan, Architecture & Data Model
+# Giftivana — Stage 1: Product Plan, Architecture & Data Model
 
 > Status: planning document. Nothing in this file is a claim of delivery coverage, partner agreements, payment capability, or legal compliance. See §7 "Unresolved launch requirements".
 
 ---
 
-## 1. Understanding of Evernear
+## 1. Understanding of Giftivana
 
-Evernear ("Distance doesn't have to feel so far.") is an online gifting platform for people—primarily expats—who want to send thoughtful gifts to family and friends in **Syria** and **Iraq**. A customer picks a destination (country + city), browses what is actually available there, chooses products, adds recipient details, a delivery date, and a personal message, then places an order. Seven categories: flowers, cakes, chocolates, balloons, plants, curated gift baskets, and **store gift cards** (a first-class category purchased through the same flow, with placeholder partners until real partners exist).
+Giftivana ("Distance doesn't have to feel so far.") is an online gifting platform for people—primarily expats—who want to send thoughtful gifts to family and friends in **Syria** and **Iraq**. A customer picks a destination (country + city), browses what is actually available there, chooses products, adds recipient details, a delivery date, and a personal message, then places an order. Seven categories: flowers, cakes, chocolates, balloons, plants, curated gift baskets, and **store gift cards** (a first-class category purchased through the same flow, with placeholder partners until real partners exist).
 
 The business constraints shape the design more than the features do: no payment processor chosen, no partner stores confirmed, cross-border/sanctions questions unresolved, and gift-card codes must never be fabricated. The MVP is therefore a complete, honest **ordering and operations system** with a demo payment path and manual fulfillment, structured so real providers and partners can be plugged in through configuration rather than code changes.
 
@@ -62,7 +62,7 @@ Pinned versions are confirmed against the registry at scaffold time in Stage 2 a
 ### 3.3 Folder structure
 
 ```
-evernear/
+giftivana/
 ├─ .github/workflows/ci.yml
 ├─ .env.example
 ├─ .gitignore
@@ -283,7 +283,7 @@ Public catalog responses never include `partner.contact_notes`, `orders.support_
 
 ## 7. Unresolved launch requirements (blocking real transactions)
 
-These must be resolved with qualified professionals/providers before Evernear processes real orders. The app will display a non-dismissable "demo environment" notice until an admin setting is flipped after these are cleared.
+These must be resolved with qualified professionals/providers before Giftivana processes real orders. The app will display a non-dismissable "demo environment" notice until an admin setting is flipped after these are cleared.
 
 1. **Payment processor availability** — a provider that will onboard a business selling into Syria and Iraq, with acceptable settlement and chargeback terms.
 2. **Sanctions and export-control compliance** — legal review of OFAC/EU/UK regimes and any licence requirements for the business model, product categories, and partner payments.
@@ -299,7 +299,7 @@ These must be resolved with qualified professionals/providers before Evernear pr
 
 1. **Charge currency:** Is USD the right single currency to charge customers in for the MVP? (Default: yes.)
 2. **Supabase project:** The Supabase connector is available in this session. Should I create a new project in your organisation at Stage 3 (it may incur cost—I'll confirm first), or will you supply an existing project's URL and keys?
-3. **GitHub:** Should I create the `evernear` repository and push milestone commits via the GitHub connector, or do you prefer to create it and give me the name?
+3. **GitHub:** Should I create the `giftivana` repository and push milestone commits via the GitHub connector, or do you prefer to create it and give me the name?
 4. **Gift-card secrets:** When a real partner supplies codes, do you want them stored encrypted in the database (revealable to the entitled customer in their account), or kept out of the database entirely and delivered only by your team by hand? (Default: encrypted storage with audited reveal, since it enables the customer flow.)
 5. **Origin markets:** Which customer countries should appear first in the "ordering from" selector? (Default: US, UK, Germany, Sweden, Canada, Australia, UAE—editable in admin.)
 

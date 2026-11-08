@@ -53,7 +53,7 @@ export default async function DeliveryPage() {
         team. The gift-card page explains which applies and how long it takes.
       </p>
       <h2>What we can't promise yet</h2>
-      <p>Evernear is in development. Delivery times, coverage and fees shown here are illustrative and will be confirmed once local partners are in place.</p>
+      <p>Giftivana is in development. Delivery times, coverage and fees shown here are illustrative and will be confirmed once local partners are in place.</p>
     </PageShell>
   );
 }

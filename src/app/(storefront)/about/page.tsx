@@ -5,10 +5,10 @@ export const metadata: Metadata = { title: "About" };
 
 export default function AboutPage() {
   return (
-    <PageShell title="About Evernear" intro="Evernear exists for the moments you can't be in the room for.">
+    <PageShell title="About Giftivana" intro="Giftivana exists for the moments you can't be in the room for.">
       <p>
         Many of us live far from the people we grew up with. Birthdays, Eid, a new baby, a hard week — these keep happening whether or not we can be there.
-        Evernear is a way to show up anyway: a bouquet that arrives on the right morning, a cake with your words on it, or a store gift card so someone can
+        Giftivana is a way to show up anyway: a bouquet that arrives on the right morning, a cake with your words on it, or a store gift card so someone can
         choose what they actually need.
       </p>
       <h2>What we do</h2>
@@ -27,7 +27,7 @@ export default function AboutPage() {
       </ul>
       <h2>Where we are now</h2>
       <p>
-        Evernear is in development. The stores, cities and products you see are placeholders used to build and test the experience. Nothing on this site is a
+        Giftivana is in development. The stores, cities and products you see are placeholders used to build and test the experience. Nothing on this site is a
         confirmed service yet.
       </p>
     </PageShell>

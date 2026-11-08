@@ -1,8 +1,8 @@
-# Evernear
+# Giftivana
 
 _Distance doesn't have to feel so far._
 
-Evernear is an online gifting platform for sending flowers, cakes, chocolates, balloons, plants, gift baskets and **store gift cards** to family and friends in Syria and Iraq.
+Giftivana is an online gifting platform for sending flowers, cakes, chocolates, balloons, plants, gift baskets and **store gift cards** to family and friends in Syria and Iraq.
 
 > **Status: in development — Stage 2 of 6.** Everything on the site is placeholder content. Partners are fictional, cities are demo destinations, and no payments are real. See [docs/STAGE-1-PLAN.md](docs/STAGE-1-PLAN.md) §7 for the launch requirements that must be resolved before any real transaction.
 
