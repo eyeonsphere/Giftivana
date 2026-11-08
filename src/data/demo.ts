@@ -47,13 +47,23 @@ export const countries: Country[] = [
 
 export const cities: City[] = [
   { id: "city_damascus", countryCode: "SY", name: "Damascus", slug: "damascus", timezone: "Asia/Damascus", isActive: true, sortOrder: 1 },
+  { id: "city_aleppo", countryCode: "SY", name: "Aleppo", slug: "aleppo", timezone: "Asia/Damascus", isActive: true, sortOrder: 2 },
+  { id: "city_homs", countryCode: "SY", name: "Homs", slug: "homs", timezone: "Asia/Damascus", isActive: true, sortOrder: 3 },
+  { id: "city_hama", countryCode: "SY", name: "Hama", slug: "hama", timezone: "Asia/Damascus", isActive: true, sortOrder: 4 },
+  { id: "city_latakia", countryCode: "SY", name: "Latakia", slug: "latakia", timezone: "Asia/Damascus", isActive: true, sortOrder: 5 },
+  { id: "city_tartus", countryCode: "SY", name: "Tartus", slug: "tartus", timezone: "Asia/Damascus", isActive: true, sortOrder: 6 },
   { id: "city_baghdad", countryCode: "IQ", name: "Baghdad", slug: "baghdad", timezone: "Asia/Baghdad", isActive: true, sortOrder: 1 },
 ];
 
-export const deliverySettings: DeliverySettings[] = [
-  { cityId: "city_damascus", minLeadDays: 2, maxAdvanceDays: 45, cutoffTime: "14:00", blackoutDates: [], deliveryDays: [0, 1, 2, 3, 4, 6] },
-  { cityId: "city_baghdad", minLeadDays: 2, maxAdvanceDays: 45, cutoffTime: "14:00", blackoutDates: [], deliveryDays: [0, 1, 2, 3, 4, 6] },
-];
+export const deliverySettings: DeliverySettings[] = cities.map((c) => ({
+  cityId: c.id,
+  // Demo values. Damascus and Baghdad: 2-day lead; other cities: 3-day lead until local partners confirm.
+  minLeadDays: c.id === "city_damascus" || c.id === "city_baghdad" ? 2 : 3,
+  maxAdvanceDays: 45,
+  cutoffTime: "14:00",
+  blackoutDates: [],
+  deliveryDays: [0, 1, 2, 3, 4, 6],
+}));
 
 /* ---------- Taxonomy ---------- */
 
@@ -590,8 +600,21 @@ export const productVariants: ProductVariant[] = seeds.flatMap(({ product, varia
   })),
 );
 
+const syrianCityIds = cities.filter((c) => c.countryCode === "SY").map((c) => c.id);
+
 export const productAvailability: ProductAvailability[] = seeds.flatMap(({ product, cities: cs }) =>
-  cs.map((c) => ({ productId: product.id, cityId: c.cityId, isAvailable: true, leadTimeDays: c.leadTimeDays })),
+  cs.flatMap((c) => {
+    const base: ProductAvailability = { productId: product.id, cityId: c.cityId, isAvailable: true, leadTimeDays: c.leadTimeDays };
+    // Demo rule: a physical gift deliverable in Damascus is also deliverable in the other Syrian demo cities,
+    // one day slower. Gift cards stay limited to the cities their partner actually lists.
+    if (product.productType !== "gift_card" && c.cityId === "city_damascus") {
+      const others = syrianCityIds
+        .filter((id) => id !== "city_damascus")
+        .map<ProductAvailability>((id) => ({ productId: product.id, cityId: id, isAvailable: true, leadTimeDays: (c.leadTimeDays ?? 2) + 1 }));
+      return [base, ...others];
+    }
+    return [base];
+  }),
 );
 
 /* ---------- Gift-card details ---------- */

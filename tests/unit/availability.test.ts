@@ -58,3 +58,18 @@ describe("destination-based catalog (demo data)", () => {
     expect(sorted[0].fromPrice.amountMinor).toBeGreaterThanOrEqual(sorted[1].fromPrice.amountMinor);
   });
 });
+
+describe("Syrian demo cities", () => {
+  it("lists six Syrian cities and keeps Baghdad", async () => {
+    const { getCities } = await import("@/lib/catalog/queries");
+    const sy = await getCities("SY");
+    expect(sy.map((c) => c.name)).toEqual(["Damascus", "Aleppo", "Homs", "Hama", "Latakia", "Tartus"]);
+    expect((await getCities("IQ")).map((c) => c.slug)).toEqual(["baghdad"]);
+  });
+
+  it("makes Damascus physical gifts available in other Syrian cities, but not gift cards", async () => {
+    const aleppo = await listProducts({ type: "physical", cityId: "city_aleppo" });
+    expect(aleppo.some((p) => p.slug === "soft-peony-bouquet")).toBe(true);
+    expect(await listProducts({ type: "gift_card", cityId: "city_aleppo" })).toHaveLength(0);
+  });
+});
