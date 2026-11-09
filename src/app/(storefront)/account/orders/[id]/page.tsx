@@ -5,9 +5,9 @@ import { formatMoney } from "@/lib/money";
 import { notFound } from "next/navigation";
 import type { Money } from "@/types/domain";
 import Link from "next/link";
+import { connection } from "next/server";
 import { GiftCardRevealButton } from "@/components/account/gift-card-reveal";
 
-export const dynamic = "force-dynamic";
 
 const statusLabel: Record<string, { text: string; className: string }> = {
   pending_payment: { text: "Payment pending", className: "bg-amber-100 text-amber-800" },
@@ -24,6 +24,7 @@ interface Props {
 }
 
 export default async function OrderDetailPage({ params }: Props) {
+  await connection();
   const { id } = await params;
   const { user: user } = await requireUser();
   const supabase = await createClient();

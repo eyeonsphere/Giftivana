@@ -1,8 +1,8 @@
 import { requireAdmin } from "@/lib/auth/helpers";
 import { createAdminClient } from "@/lib/supabase/admin";
 import Link from "next/link";
+import { connection } from "next/server";
 
-export const dynamic = "force-dynamic";
 
 const statusColor: Record<string, string> = {
   pending: "bg-amber-100 text-amber-800",
@@ -15,6 +15,7 @@ const statusColor: Record<string, string> = {
 };
 
 export default async function GiftCardsPage() {
+  await connection();
   await requireAdmin();
   const supabase = createAdminClient();
 

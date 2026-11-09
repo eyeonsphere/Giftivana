@@ -1,15 +1,16 @@
 import { requireAdmin } from "@/lib/auth/helpers";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { notFound } from "next/navigation";
+import { connection } from "next/server";
 import { IssueGiftCardForm } from "./issue-form";
 
-export const dynamic = "force-dynamic";
 
 interface Props {
   params: Promise<{ itemId: string }>;
 }
 
 export default async function IssueGiftCardPage({ params }: Props) {
+  await connection();
   await requireAdmin();
   const { itemId } = await params;
   const supabase = createAdminClient();

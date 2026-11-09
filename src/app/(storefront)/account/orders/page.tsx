@@ -1,11 +1,11 @@
 import Link from "next/link";
+import { connection } from "next/server";
 import { requireUser } from "@/lib/auth/helpers";
 import { createClient } from "@/lib/supabase/server";
 import { getCurrencies } from "@/lib/catalog/queries";
 import { formatMoney } from "@/lib/money";
 import type { Money } from "@/types/domain";
 
-export const dynamic = "force-dynamic";
 
 const statusLabel: Record<string, { text: string; className: string }> = {
   pending_payment: { text: "Payment pending", className: "bg-amber-100 text-amber-800" },
@@ -18,6 +18,7 @@ const statusLabel: Record<string, { text: string; className: string }> = {
 };
 
 export default async function OrderHistoryPage() {
+  await connection();
   const { user: user } = await requireUser();
   const supabase = await createClient();
 

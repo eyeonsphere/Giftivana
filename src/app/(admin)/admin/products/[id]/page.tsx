@@ -3,14 +3,15 @@ import { updateProduct } from "../actions";
 import { notFound, redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
+import { connection } from "next/server";
 
-export const dynamic = "force-dynamic";
 
 interface Props {
   params: Promise<{ id: string }>;
 }
 
 export default async function AdminProductEditPage({ params }: Props) {
+  await connection();
   const { id } = await params;
 
   // "new" is handled as a create form

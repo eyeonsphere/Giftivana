@@ -1,7 +1,7 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import Link from "next/link";
+import { connection } from "next/server";
 
-export const dynamic = "force-dynamic";
 
 const statusColors: Record<string, string> = {
   active: "bg-green-100 text-green-800",
@@ -14,6 +14,7 @@ interface Props {
 }
 
 export default async function AdminProductsPage({ searchParams }: Props) {
+  await connection();
   const { status, type } = await searchParams;
   const supabase = createAdminClient();
 

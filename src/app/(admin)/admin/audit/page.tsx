@@ -1,13 +1,14 @@
+import { connection } from "next/server";
 import { requireAdmin } from "@/lib/auth/helpers";
 import { createAdminClient } from "@/lib/supabase/admin";
 
-export const dynamic = "force-dynamic";
 
 interface Props {
   searchParams: Promise<{ action?: string; entity?: string; page?: string }>;
 }
 
 export default async function AuditLogPage({ searchParams }: Props) {
+  await connection();
   await requireAdmin();
   const { action, entity, page: pageStr } = await searchParams;
   const supabase = createAdminClient();

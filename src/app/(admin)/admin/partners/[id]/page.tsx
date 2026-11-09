@@ -3,14 +3,15 @@ import { requireStaff } from "@/lib/auth/helpers";
 import { notFound } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
+import { connection } from "next/server";
 
-export const dynamic = "force-dynamic";
 
 interface Props {
   params: Promise<{ id: string }>;
 }
 
 export default async function AdminPartnerEditPage({ params }: Props) {
+  await connection();
   const { id } = await params;
   const supabase = createAdminClient();
 

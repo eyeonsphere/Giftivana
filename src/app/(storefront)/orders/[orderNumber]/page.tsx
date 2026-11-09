@@ -11,11 +11,11 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { getCurrencies } from "@/lib/catalog/queries";
 import { formatMoney } from "@/lib/money";
 import { notFound } from "next/navigation";
+import { connection } from "next/server";
 import type { Money } from "@/types/domain";
 import { PageShell } from "@/components/storefront/page-shell";
 import crypto from "node:crypto";
 
-export const dynamic = "force-dynamic";
 
 interface Props {
   params: Promise<{ orderNumber: string }>;
@@ -23,6 +23,7 @@ interface Props {
 }
 
 export default async function OrderConfirmationPage({ params, searchParams }: Props) {
+  await connection();
   const { orderNumber } = await params;
   const { t: token } = await searchParams;
 

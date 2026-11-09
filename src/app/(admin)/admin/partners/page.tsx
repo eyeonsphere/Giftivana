@@ -1,7 +1,7 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import Link from "next/link";
+import { connection } from "next/server";
 
-export const dynamic = "force-dynamic";
 
 const statusColors: Record<string, string> = {
   active: "bg-green-100 text-green-800",
@@ -10,6 +10,7 @@ const statusColors: Record<string, string> = {
 };
 
 export default async function AdminPartnersPage() {
+  await connection();
   const supabase = createAdminClient();
   const { data: partners } = await supabase
     .from("partners")

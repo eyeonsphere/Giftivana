@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 /**
  * Public order tracking page.
  *
@@ -7,7 +8,6 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import { PageShell } from "@/components/storefront/page-shell";
 
-export const dynamic = "force-dynamic";
 
 interface Props {
   searchParams: Promise<{ order?: string }>;
@@ -24,6 +24,7 @@ const STATUS_LABELS: Record<string, { label: string; color: string }> = {
 };
 
 export default async function TrackPage({ searchParams }: Props) {
+  await connection();
   const { order: orderNumber } = await searchParams;
 
   let result: {

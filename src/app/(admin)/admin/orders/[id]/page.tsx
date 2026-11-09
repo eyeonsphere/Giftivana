@@ -2,10 +2,10 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { requireStaff } from "@/lib/auth/helpers";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { connection } from "next/server";
 import { OrderActions } from "@/components/admin/order-actions";
 import { SupportNotes } from "@/components/admin/support-notes";
 
-export const dynamic = "force-dynamic";
 
 function statusBadge(status: string) {
   const colors: Record<string, string> = {
@@ -46,6 +46,7 @@ interface Props {
 }
 
 export default async function AdminOrderDetailPage({ params }: Props) {
+  await connection();
   await requireStaff();
   const { id } = await params;
   const admin = createAdminClient();

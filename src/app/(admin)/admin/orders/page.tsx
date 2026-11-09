@@ -1,8 +1,8 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import { requireStaff } from "@/lib/auth/helpers";
 import Link from "next/link";
+import { connection } from "next/server";
 
-export const dynamic = "force-dynamic";
 
 const STATUSES = [
   { value: "", label: "All" },
@@ -38,6 +38,7 @@ interface Props {
 }
 
 export default async function AdminOrdersPage({ searchParams }: Props) {
+  await connection();
   await requireStaff();
   const params = await searchParams;
   const admin = createAdminClient();

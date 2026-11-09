@@ -1,7 +1,7 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import Link from "next/link";
+import { connection } from "next/server";
 
-export const dynamic = "force-dynamic";
 
 /** Simple stat card. */
 function Stat({
@@ -49,6 +49,7 @@ const STATUS_COLORS: Record<string, string> = {
 };
 
 export default async function AdminDashboardPage() {
+  await connection();
   const supabase = createAdminClient();
 
   // Fetch stats in parallel

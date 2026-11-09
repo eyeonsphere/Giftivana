@@ -1,10 +1,11 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import { requireStaff } from "@/lib/auth/helpers";
 import { revalidatePath } from "next/cache";
+import { connection } from "next/server";
 
-export const dynamic = "force-dynamic";
 
 export default async function AdminDestinationsPage() {
+  await connection();
   const supabase = createAdminClient();
 
   const [{ data: countries }, { data: cities }, { data: settings }] = await Promise.all([
