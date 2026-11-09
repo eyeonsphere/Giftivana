@@ -169,7 +169,7 @@ export default async function OrderDetailPage({ params }: Props) {
           <div className="rounded-card border border-sand bg-white p-6">
             <h2 className="font-display text-lg font-semibold mb-4">Status history</h2>
             <ol className="relative border-s border-sand ms-3">
-              {history.map((h: Record<string, unknown>, i: number) => (
+              {history.map((h: Record<string, unknown>) => (
                 <li key={h.id as string} className="mb-4 ms-6 last:mb-0">
                   <span className="absolute -start-1.5 mt-1.5 flex h-3 w-3 items-center justify-center rounded-full border border-sand bg-white" />
                   <div className="text-sm">

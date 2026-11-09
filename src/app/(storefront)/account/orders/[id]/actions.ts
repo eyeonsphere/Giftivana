@@ -1,6 +1,5 @@
 "use server";
 
-import { requireUser } from "@/lib/auth/helpers";
 import { createClient } from "@/lib/supabase/server";
 
 const GIFT_CARD_KEY =
@@ -17,7 +16,6 @@ export interface RevealResult {
 export async function revealGiftCard(
   orderItemId: string,
 ): Promise<RevealResult> {
-  const user = await requireUser();
   const supabase = await createClient();
 
   const { data, error } = await supabase.rpc("reveal_gift_card", {

@@ -9,13 +9,13 @@
 
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
-import { checkoutSchema, type CheckoutInput } from "@/lib/checkout/schema";
+import { checkoutSchema } from "@/lib/checkout/schema";
 import { priceCart, type CartLineInput } from "@/lib/checkout/totals";
 import { getDeliveryFee } from "@/lib/delivery/fees";
 import { getDeliverySettings, getDestinationBySlug } from "@/lib/catalog/queries";
 import { isValidDeliveryDate } from "@/lib/delivery/dates";
 import { getProvider } from "@/lib/payments/registry";
-import { containsPhysical, containsDigital } from "@/lib/cart/rules";
+// import { containsPhysical, containsDigital } from "@/lib/cart/rules";
 import crypto from "node:crypto";
 
 export interface CheckoutResult {
@@ -95,7 +95,6 @@ export async function createOrder(input: unknown): Promise<CheckoutResult> {
 
   const fee = await getDeliveryFee(cityId, hasPhysical, hasDigital);
   const deliveryFeeMinor = fee?.feeMinor ?? 0;
-  const feeCurrency = fee?.currency ?? "USD";
 
   // 6. Re-price cart server-side
   let priced;

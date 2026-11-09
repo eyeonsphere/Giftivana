@@ -3,12 +3,6 @@
 import { useState, useTransition } from "react";
 import { addSupportNote } from "@/app/(admin)/admin/orders/[id]/actions";
 
-interface Note {
-  id: string;
-  body: string;
-  created_at: string;
-  profiles: { full_name: string } | null;
-}
 
 export function SupportNotes({ orderId, notes }: { orderId: string; notes: Record<string, unknown>[] }) {
   const [body, setBody] = useState("");

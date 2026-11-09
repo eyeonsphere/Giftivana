@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
 import { requireUser } from "@/lib/auth/helpers";
 import { Section } from "@/components/storefront/section";
 import { AccountNav } from "@/components/account/account-nav";

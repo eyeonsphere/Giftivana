@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useState, useTransition, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/lib/cart/store";
@@ -99,7 +101,6 @@ export function CheckoutForm({
 
   // Cart totals for display
   const subtotal = displaySubtotalMinor(cart);
-  const deliveryFee = 0; // Computed server-side; show 0 or "calculated at checkout"
 
   function completeStep(step: Step) {
     setCompletedSteps((prev) => new Set([...prev, step]));
@@ -174,9 +175,9 @@ export function CheckoutForm({
     return (
       <div className="text-center py-12 text-ink/50">
         <p className="text-lg mb-2">Your cart is empty</p>
-        <a href="/gifts" className="text-emerald-700 underline">
+        <Link href="/gifts" className="text-emerald-700 underline">
           Browse gifts
-        </a>
+        </Link>
       </div>
     );
   }

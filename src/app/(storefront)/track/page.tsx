@@ -6,7 +6,6 @@
  */
 import { createAdminClient } from "@/lib/supabase/admin";
 import { PageShell } from "@/components/storefront/page-shell";
-import { redirect } from "next/navigation";
 
 interface Props {
   searchParams: Promise<{ order?: string }>;

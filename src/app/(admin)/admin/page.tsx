@@ -107,7 +107,6 @@ export default async function AdminDashboardPage() {
     currency: string;
   }[];
   const totalRevenue = revenueRows.reduce((s, r) => s + r.total_minor, 0);
-  const revenueCurrency = revenueRows[0]?.currency ?? "USD";
   const revenueDisplay =
     totalRevenue > 0
       ? `$${(totalRevenue / 100).toLocaleString("en-US", { minimumFractionDigits: 2 })}`

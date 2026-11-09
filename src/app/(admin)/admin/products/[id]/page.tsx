@@ -1,5 +1,5 @@
 import { createAdminClient } from "@/lib/supabase/admin";
-import { updateProduct, toggleFeatured } from "../actions";
+import { updateProduct } from "../actions";
 import { notFound, redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
@@ -63,10 +63,6 @@ export default async function AdminProductEditPage({ params }: Props) {
     }
   }
 
-  async function handleToggleFeatured() {
-    "use server";
-    await toggleFeatured(id);
-  }
 
   const p = product ?? {};
   const basePrice = ((p.base_price_minor as number) ?? 0) / 100;

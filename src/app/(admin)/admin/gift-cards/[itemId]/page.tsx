@@ -29,11 +29,11 @@ export default async function IssueGiftCardPage({ params }: Props) {
 
   if (!item) notFound();
 
-  const snap = item.snapshot as any;
-  const order = item.orders as any;
-  const recipients = (order.order_recipients ?? []) as any[];
+  const snap = item.snapshot as unknown as Record<string, unknown>;
+  const order = item.orders as unknown as Record<string, unknown>;
+  const recipients = (order.order_recipients ?? []) as unknown as Record<string, unknown>[];
   const recipient = recipients[0] ?? null;
-  const existing = (item.gift_card_fulfillments_secure ?? []) as any[];
+  const existing = (item.gift_card_fulfillments_secure ?? []) as unknown as Record<string, unknown>[];
   const alreadyIssued = existing.length > 0;
 
   // Fetch city name
@@ -100,12 +100,11 @@ export default async function IssueGiftCardPage({ params }: Props) {
             </span>
           </dd>
 
-          {snap.partnerName && (
+          {snap.partnerName ? (
             <>
               <dt className="text-gray-500">Partner</dt>
               <dd className="text-gray-900">{snap.partnerName as string}</dd>
-            </>
-          )}
+            </>) : null}
         </dl>
       </div>
 
