@@ -2,6 +2,8 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { revalidatePath } from "next/cache";
 import { requireStaff } from "@/lib/auth/helpers";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminCategoriesPage() {
   const supabase = createAdminClient();
   const { data: categories } = await supabase

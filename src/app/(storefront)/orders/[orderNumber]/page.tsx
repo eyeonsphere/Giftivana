@@ -15,6 +15,8 @@ import type { Money } from "@/types/domain";
 import { PageShell } from "@/components/storefront/page-shell";
 import crypto from "node:crypto";
 
+export const dynamic = "force-dynamic";
+
 interface Props {
   params: Promise<{ orderNumber: string }>;
   searchParams: Promise<{ t?: string }>;

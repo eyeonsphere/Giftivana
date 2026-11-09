@@ -2,6 +2,8 @@ import { requireUser } from "@/lib/auth/helpers";
 import { createClient } from "@/lib/supabase/server";
 import { ProfileForm } from "@/components/account/profile-form";
 
+export const dynamic = "force-dynamic";
+
 export default async function AccountPage() {
   const { user: user } = await requireUser();
   const supabase = await createClient();

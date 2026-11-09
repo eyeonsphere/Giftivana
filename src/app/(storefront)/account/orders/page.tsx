@@ -5,6 +5,8 @@ import { getCurrencies } from "@/lib/catalog/queries";
 import { formatMoney } from "@/lib/money";
 import type { Money } from "@/types/domain";
 
+export const dynamic = "force-dynamic";
+
 const statusLabel: Record<string, { text: string; className: string }> = {
   pending_payment: { text: "Payment pending", className: "bg-amber-100 text-amber-800" },
   confirmed: { text: "Confirmed", className: "bg-green-100 text-green-800" },

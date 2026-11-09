@@ -2,6 +2,8 @@ import { requireAdmin } from "@/lib/auth/helpers";
 import { createAdminClient } from "@/lib/supabase/admin";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 const statusColor: Record<string, string> = {
   pending: "bg-amber-100 text-amber-800",
   scheduled: "bg-blue-100 text-blue-800",

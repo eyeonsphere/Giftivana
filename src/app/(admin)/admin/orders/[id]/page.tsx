@@ -5,6 +5,8 @@ import Link from "next/link";
 import { OrderActions } from "@/components/admin/order-actions";
 import { SupportNotes } from "@/components/admin/support-notes";
 
+export const dynamic = "force-dynamic";
+
 function statusBadge(status: string) {
   const colors: Record<string, string> = {
     pending_payment: "bg-amber-100 text-amber-800",

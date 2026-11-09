@@ -2,6 +2,8 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { requireStaff } from "@/lib/auth/helpers";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 const STATUSES = [
   { value: "", label: "All" },
   { value: "pending_payment", label: "Pending payment" },

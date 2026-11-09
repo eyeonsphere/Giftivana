@@ -6,7 +6,7 @@ import { ProductCard } from "@/components/storefront/product-card";
 import { EmptyState, Section, SectionHeading } from "@/components/storefront/section";
 import { ButtonLink } from "@/components/ui/button";
 import { ProductGridSkeleton } from "@/components/ui/skeleton";
-import { getCurrencyMap, getOccasionBySlug, getOccasions, listProducts } from "@/lib/catalog/queries";
+import { getCurrencyMap, getOccasionBySlug, listProducts } from "@/lib/catalog/queries";
 import { getCurrentDestination } from "@/lib/destination/server";
 import { t } from "@/lib/i18n";
 import { createAdminClient } from "@/lib/supabase/admin";

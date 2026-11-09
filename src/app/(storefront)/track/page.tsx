@@ -7,6 +7,8 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import { PageShell } from "@/components/storefront/page-shell";
 
+export const dynamic = "force-dynamic";
+
 interface Props {
   searchParams: Promise<{ order?: string }>;
 }

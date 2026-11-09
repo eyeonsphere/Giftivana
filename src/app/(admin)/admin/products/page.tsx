@@ -1,6 +1,8 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 const statusColors: Record<string, string> = {
   active: "bg-green-100 text-green-800",
   draft: "bg-gray-100 text-gray-800",

@@ -3,6 +3,8 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { notFound } from "next/navigation";
 import { IssueGiftCardForm } from "./issue-form";
 
+export const dynamic = "force-dynamic";
+
 interface Props {
   params: Promise<{ itemId: string }>;
 }

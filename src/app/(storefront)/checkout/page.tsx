@@ -5,6 +5,8 @@ import { getCurrencies, getDeliverySettings } from "@/lib/catalog/queries";
 import { CheckoutForm } from "@/components/checkout/checkout-form";
 import { PageShell } from "@/components/storefront/page-shell";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = { title: "Checkout — Giftivana" };
 
 async function CheckoutLoader() {
