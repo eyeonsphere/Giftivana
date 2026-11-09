@@ -21,6 +21,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  "use cache";
   const { slug } = await params;
   const meta = await getProductMetaBySlug(slug);
   return meta ? { title: meta.name, description: meta.shortDescription } : { title: t("common.notFoundTitle") };

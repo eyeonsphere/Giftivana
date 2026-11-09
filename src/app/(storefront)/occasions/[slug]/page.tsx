@@ -23,6 +23,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  "use cache";
   const occasion = await getOccasionMetaBySlug((await params).slug);
   return { title: occasion ? occasion.name : t("common.notFoundTitle") };
 }
