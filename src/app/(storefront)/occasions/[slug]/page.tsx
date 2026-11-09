@@ -9,11 +9,17 @@ import { ProductGridSkeleton } from "@/components/ui/skeleton";
 import { getCurrencyMap, getOccasionBySlug, getOccasions, listProducts } from "@/lib/catalog/queries";
 import { getCurrentDestination } from "@/lib/destination/server";
 import { t } from "@/lib/i18n";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return (await getOccasions()).map((o) => ({ slug: o.slug }));
+  const supabase = createAdminClient();
+  const { data } = await supabase
+    .from("occasions")
+    .select("slug")
+    .eq("is_active", true);
+  return (data ?? []).map((o: { slug: string }) => ({ slug: o.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
