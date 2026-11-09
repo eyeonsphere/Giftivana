@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import "./globals.css";
+import { LazyCartProvider } from "@/components/cart-provider-lazy";
 import { defaultLocale, dir, t } from "@/lib/i18n";
-
-const CartProvider = dynamic(
-  () => import("@/lib/cart/store").then((m) => m.CartProvider),
-  { ssr: false },
-);
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +15,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang={defaultLocale} dir={dir(defaultLocale)}>
       <body suppressHydrationWarning>
-        <CartProvider>{children}</CartProvider>
+        <LazyCartProvider>{children}</LazyCartProvider>
       </body>
     </html>
   );
