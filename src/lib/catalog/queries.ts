@@ -8,6 +8,7 @@
  * fulfillment secrets, recipient details). It is the public catalog.
  */
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import type {
   Category,
   City,
@@ -615,8 +616,12 @@ export async function getProductDestinations(productId: string): Promise<Destina
     .filter((d) => d.country);
 }
 
+/**
+ * Uses the admin client because this is called from generateStaticParams
+ * at build time, where cookies() is not available.
+ */
 export async function getAllProductSlugs(type: ProductType): Promise<string[]> {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("products")
     .select("slug")
