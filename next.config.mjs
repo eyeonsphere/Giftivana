@@ -1,11 +1,14 @@
-import type { NextConfig } from "next";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "standalone",
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
-    // Pin the project root; a stray package-lock.json in a parent folder otherwise confuses Turbopack.
     root: __dirname,
     rules: {
       "*.css": {
