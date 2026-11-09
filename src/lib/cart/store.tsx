@@ -93,8 +93,19 @@ export function CartProvider({ children }: { children: ReactNode }) {
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
 
+/** Safe default when rendered outside CartProvider (e.g. _not-found, admin). */
+const EMPTY_CART: CartContextValue = {
+  state: { lines: [], cityId: null },
+  hydrated: false,
+  add: () => ({ ok: true, state: { lines: [], cityId: null } }),
+  replaceWith: () => {},
+  remove: () => {},
+  setQuantity: () => {},
+  clear: () => {},
+  count: 0,
+};
+
 export function useCart(): CartContextValue {
   const ctx = useContext(CartContext);
-  if (!ctx) throw new Error("useCart must be used inside <CartProvider>");
-  return ctx;
+  return ctx ?? EMPTY_CART;
 }

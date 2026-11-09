@@ -1,5 +1,4 @@
 import { redirect } from "next/navigation";
-import { connection } from "next/server";
 import { Suspense } from "react";
 import { getCurrentDestination } from "@/lib/destination/server";
 import { getCurrencies, getDeliverySettings } from "@/lib/catalog/queries";
