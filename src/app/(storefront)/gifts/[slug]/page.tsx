@@ -8,7 +8,7 @@ import { Section } from "@/components/storefront/section";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { isAvailableIn, leadTimeFor } from "@/lib/catalog/availability";
-import { getAllProductSlugs, getCurrencies, getProductBySlug, getProductDestinations } from "@/lib/catalog/queries";
+import { getAllProductSlugs, getCurrencies, getProductMetaBySlug, getProductBySlug, getProductDestinations } from "@/lib/catalog/queries";
 import { getCurrentDestination } from "@/lib/destination/server";
 import { t } from "@/lib/i18n";
 import { formatMoney } from "@/lib/money";
@@ -23,8 +23,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const product = await getProductBySlug(slug, "physical");
-  return product ? { title: product.name, description: product.shortDescription } : { title: t("common.notFoundTitle") };
+  const meta = await getProductMetaBySlug(slug);
+  return meta ? { title: meta.name, description: meta.shortDescription } : { title: t("common.notFoundTitle") };
 }
 
 /** Everything that depends on the destination cookie streams in here. */

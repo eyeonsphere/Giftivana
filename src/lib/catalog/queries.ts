@@ -630,3 +630,30 @@ export async function getAllProductSlugs(type: ProductType): Promise<string[]> {
   if (error) throw error;
   return (data ?? []).map((r: Record<string, unknown>) => r.slug as string);
 }
+
+
+/* ---------- Build-time metadata helpers (admin client, no cookies) ---------- */
+
+/** For generateMetadata — fetches just name + description without cookies. */
+export async function getProductMetaBySlug(slug: string): Promise<{ name: string; shortDescription: string } | null> {
+  const supabase = createAdminClient();
+  const { data } = await supabase
+    .from("products")
+    .select("name, short_description")
+    .eq("slug", slug)
+    .eq("status", "active")
+    .maybeSingle();
+  return data ? { name: data.name, shortDescription: data.short_description } : null;
+}
+
+/** For generateMetadata — fetches just occasion name without cookies. */
+export async function getOccasionMetaBySlug(slug: string): Promise<{ name: string } | null> {
+  const supabase = createAdminClient();
+  const { data } = await supabase
+    .from("occasions")
+    .select("name")
+    .eq("slug", slug)
+    .eq("is_active", true)
+    .maybeSingle();
+  return data;
+}

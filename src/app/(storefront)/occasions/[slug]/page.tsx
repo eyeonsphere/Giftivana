@@ -6,7 +6,7 @@ import { ProductCard } from "@/components/storefront/product-card";
 import { EmptyState, Section, SectionHeading } from "@/components/storefront/section";
 import { ButtonLink } from "@/components/ui/button";
 import { ProductGridSkeleton } from "@/components/ui/skeleton";
-import { getCurrencyMap, getOccasionBySlug, listProducts } from "@/lib/catalog/queries";
+import { getCurrencyMap, getOccasionBySlug, getOccasionMetaBySlug, listProducts } from "@/lib/catalog/queries";
 import { getCurrentDestination } from "@/lib/destination/server";
 import { t } from "@/lib/i18n";
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -23,7 +23,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const occasion = await getOccasionBySlug((await params).slug);
+  const occasion = await getOccasionMetaBySlug((await params).slug);
   return { title: occasion ? occasion.name : t("common.notFoundTitle") };
 }
 

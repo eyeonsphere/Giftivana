@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Notice } from "@/components/ui/notice";
 import { Skeleton } from "@/components/ui/skeleton";
 import { isAvailableIn } from "@/lib/catalog/availability";
-import { getAllProductSlugs, getCities, getCurrencies, getPartnerLocations, getProductBySlug, getProductDestinations } from "@/lib/catalog/queries";
+import { getProductMetaBySlug, getAllProductSlugs, getCities, getCurrencies, getPartnerLocations, getProductBySlug, getProductDestinations } from "@/lib/catalog/queries";
 import { getCurrentDestination } from "@/lib/destination/server";
 import { t } from "@/lib/i18n";
 import type { GiftCardFulfillmentMethod, ProductDetail } from "@/types/domain";
@@ -22,8 +22,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const product = await getProductBySlug(slug, "gift_card");
-  return product ? { title: product.name, description: product.shortDescription } : { title: t("common.notFoundTitle") };
+  const meta = await getProductMetaBySlug(slug);
+  return meta ? { title: meta.name, description: meta.shortDescription } : { title: t("common.notFoundTitle") };
 }
 
 const methodLabel: Record<GiftCardFulfillmentMethod, string> = {
