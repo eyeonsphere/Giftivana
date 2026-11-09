@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { connection } from "next/server";
 import { requireStaff } from "@/lib/auth/helpers";
 import { AdminNav } from "@/components/admin/admin-nav";
 
@@ -7,6 +8,7 @@ export default async function AdminLayout({
 }: {
   children: ReactNode;
 }) {
+  await connection();
   const session = await requireStaff();
 
   return (

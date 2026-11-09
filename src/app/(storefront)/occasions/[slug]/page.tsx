@@ -12,13 +12,6 @@ import { t } from "@/lib/i18n";
 
 type Props = { params: Promise<{ slug: string }> };
 
- = await supabase
-    .from("occasions")
-    .select("slug")
-    .eq("is_active", true);
-  return (data ?? []).map((o: { slug: string }) => ({ slug: o.slug }));
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const occasion = await getOccasionBySlug((await params).slug);
   return { title: occasion ? occasion.name : t("common.notFoundTitle") };

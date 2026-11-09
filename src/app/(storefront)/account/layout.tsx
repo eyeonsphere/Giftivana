@@ -1,9 +1,11 @@
 import type { ReactNode } from "react";
+import { connection } from "next/server";
 import { requireUser } from "@/lib/auth/helpers";
 import { Section } from "@/components/storefront/section";
 import { AccountNav } from "@/components/account/account-nav";
 
 export default async function AccountLayout({ children }: { children: ReactNode }) {
+  await connection();
   await requireUser();
 
   return (

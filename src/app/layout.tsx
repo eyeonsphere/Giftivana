@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import "./globals.css";
-import { LazyCartProvider } from "@/components/cart-provider-lazy";
 import { defaultLocale, dir, t } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang={defaultLocale} dir={dir(defaultLocale)}>
       <body suppressHydrationWarning>
-        <LazyCartProvider>{children}</LazyCartProvider>
+        <Suspense>{children}</Suspense>
       </body>
     </html>
   );

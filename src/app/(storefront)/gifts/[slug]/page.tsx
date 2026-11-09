@@ -16,9 +16,6 @@ import type { ProductDetail } from "@/types/domain";
 
 type Props = { params: Promise<{ slug: string }> };
 
-));
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = await getProductBySlug(slug, "gift_card");
